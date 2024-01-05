@@ -1,111 +1,64 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-import {getClient} from '@/lib/rsc-client';
+import { getClient } from '@faustwp/experimental-app-router';
 import { gql } from '@apollo/client';
+import Link from 'next/link';
 
-const TitleQuery = gql`
-  query {
-    allSettings {
-      generalSettingsTitle
+const GetPostsQuery = gql`
+  query GetPosts {
+    posts {
+      nodes {
+        id
+        title
+        uri
+        slug
+      }
     }
   }
 `
 
+const GetPagesQuery = gql`
+  query GetPages {
+    pages {
+      nodes {
+        id
+        title
+        uri
+        slug
+      }
+    }
+  }
+`
+
+
 const Home = async () => {
-  const { data } = await getClient().query({ 
-    query: TitleQuery,
-    variables: { id: "1" },
-  })
+  let client = await getClient()
+
+  const { data: postData } = await client.query({
+    query: GetPostsQuery,
+  });
+
+  const { data: pageData } = await client.query({
+    query: GetPagesQuery,
+  });
 
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>{data.allSettings.generalSettingsTitle}</p>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main>
+      <h2>Posts</h2>
+      <ul>
+        {postData.posts.nodes.map((post) => (
+          <li>
+            <Link href={`/${post.slug}`}>{post.title}</Link>
+          </li>
+        ))}
+      </ul>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <h2>Pages</h2>
+      <ul>
+        {pageData.pages.nodes.map((page) => (
+          <li>
+            <Link href={`/${page.slug}`}>{page.title}</Link>
+          </li>
+        ))}
+      </ul>
     </main>
   )
 }
