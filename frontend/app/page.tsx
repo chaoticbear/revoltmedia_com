@@ -1,10 +1,26 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import {getClient} from '@/lib/rsc-client';
+import { gql } from '@apollo/client';
 
-export default function Home() {
+const TitleQuery = gql`
+  query {
+    allSettings {
+      generalSettingsTitle
+    }
+  }
+`
+
+const Home = async () => {
+  const { data } = await getClient().query({ 
+    query: TitleQuery,
+    variables: { id: "1" },
+  })
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
+        <p>{data.allSettings.generalSettingsTitle}</p>
         <p>
           Get started by editing&nbsp;
           <code className={styles.code}>app/page.tsx</code>
@@ -93,3 +109,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default Home
