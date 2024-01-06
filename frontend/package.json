@@ -3,12 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "sleep 5 && faust dev",
+    "build": "faust build",
+    "start": "faust start",
+    "generate": "faust generatePossibleTypes",
+    "stylesheet": "faust generateGlobalStylesheet"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.8",
+    "@faustwp/blocks": "^2.0.0",
+    "@faustwp/cli": "^1.2.1",
+    "@faustwp/core": "^1.2.0",
+    "@wordpress/style-engine": "^1.31.0",
+    "graphql": "^16.8.1",
     "react": "^18",
     "react-dom": "^18",
     "next": "14.0.4"
