@@ -29,6 +29,8 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "eslint-config-next": "14.0.4",
+    "@wordpress/scripts": "26.18.0",
+    "@faustwp/block-editor-utils": "0.0.5"
   }
 }
