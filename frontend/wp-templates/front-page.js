@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 import { flatListToHierarchical } from '@faustwp/core';
 import { WordPressBlocksViewer } from '@faustwp/blocks';
-import blocks from '@/wp-blocks';
+import blocks from '../wp-blocks';
 
 export default function Component({ loading, data }) {
   // Loading state for previews.
@@ -61,9 +61,11 @@ Component.query = gql`
   }
 `;
 
+console.log
+
 Component.variables = ({ databaseId }, ctx) => {
   return {
-    databaseId: databaseId ?? '5454',
+    databaseId,
     asPreview: ctx?.asPreview,
   };
 };

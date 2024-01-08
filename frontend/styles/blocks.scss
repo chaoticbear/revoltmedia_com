@@ -9,5 +9,7 @@
 @import '@wordpress/base-styles/colors';
 @import '@wordpress/base-styles/variables';
 @import '@wordpress/base-styles/breakpoints';
-@import '@wordpress/block-library/src/style';
-@import '@wordpress/block-library/src/theme';
+// @import '@wordpress/block-library/src/style';
+// @import '@wordpress/block-library/src/theme';
+
+@import '../wp-blocks/block-b/style.scss'
