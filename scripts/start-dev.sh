@@ -9,10 +9,10 @@ function check_endpoint {
     if [[ $(curl -s --write-out '%{http_code}\n' -X POST -H 'content-type: application/json' --data '{ "query": "{ allSettings { generalSettingsTitle } }" }' --output /dev/null "${NEXT_PUBLIC_WORDPRESS_URL}"/index.php?graphql
 ) = '200' ]]; 
     then
-    
+        cd /app/frontend || exit;
+
         yarn predev
         yarn dev
-
     fi
 }
 
@@ -27,6 +27,3 @@ for attempt in $(seq 1 15); do
         exit
     fi
 done
-
-yarn predev;
-yarn dev;
