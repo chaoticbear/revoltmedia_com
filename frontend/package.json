@@ -26,7 +26,13 @@
   },
   "devDependencies": {
     "@wordpress/scripts": "26.18.0",
-    "@faustwp/block-editor-utils": "0.0.5"
+    "@faustwp/block-editor-utils": "0.0.5",
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4"
   },
   "engines": {
     "node": ">=18",
