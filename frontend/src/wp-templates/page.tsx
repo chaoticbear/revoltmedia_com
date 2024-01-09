@@ -1,15 +1,15 @@
-import { gql } from '@apollo/client';
+import { print } from "graphql"
 import Head from "next/head";
 import EntryHeader from "../components/entry-header";
 import Footer from "../components/footer";
 import Header from "../components/header";
-import { GetPageQuery } from "../__generated__/graphql";
 import { FaustTemplate } from "@faustwp/core";
 import { flatListToHierarchical } from '@faustwp/core';
 import { WordPressBlocksViewer } from '@faustwp/blocks';
 import blocks from '../wp-blocks';
+import { gql } from "@apollo/client";
 
-const Component: FaustTemplate<GetPageQuery> = (props) => {
+const Component: FaustTemplate<any> = (props) => {
   // Loading state for previews
   if (props.loading) {
     return <>Loading...</>;
@@ -51,17 +51,18 @@ Component.variables = ({ databaseId }, ctx) => {
 };
 
 Component.query = gql(`
-  ${blocks.CoreParagraph.fragments.entry}
-  ${blocks.CoreColumns.fragments.entry}
-  ${blocks.CoreColumn.fragments.entry}
-  ${blocks.CoreCode.fragments.entry}
-  ${blocks.CoreButtons.fragments.entry}
-  ${blocks.CoreButton.fragments.entry}
-  ${blocks.CoreQuote.fragments.entry}
-  ${blocks.CoreImage.fragments.entry}
-  ${blocks.CoreSeparator.fragments.entry}
-  ${blocks.CoreList.fragments.entry}
-  ${blocks.CoreHeading.fragments.entry}
+  ${print(blocks.CoreParagraph.fragments.entry)}
+  ${print(blocks.CoreColumns.fragments.entry)}
+  ${print(blocks.CoreColumn.fragments.entry)}
+  ${print(blocks.CoreCode.fragments.entry)}
+  ${print(blocks.CoreButtons.fragments.entry)}
+  ${print(blocks.CoreButton.fragments.entry)}
+  ${print(blocks.CoreQuote.fragments.entry)}
+  ${print(blocks.CoreImage.fragments.entry)}
+  ${print(blocks.CoreSeparator.fragments.entry)}
+  ${print(blocks.CoreList.fragments.entry)}
+  ${print(blocks.CoreHeading.fragments.entry)}
+
   query GetPage($databaseId: ID!, $asPreview: Boolean = false) {
     page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
       title
@@ -72,6 +73,7 @@ Component.query = gql(`
         renderedHtml
         id: clientId
         parentId: parentClientId
+
         ...${blocks.CoreParagraph.fragments.key}
         ...${blocks.CoreColumns.fragments.key}
         ...${blocks.CoreColumn.fragments.key}
@@ -106,7 +108,5 @@ Component.query = gql(`
     }
   }
 `);
-
-console.log(Component.query)
 
 export default Component;
