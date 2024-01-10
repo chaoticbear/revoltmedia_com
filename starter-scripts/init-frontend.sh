@@ -48,8 +48,9 @@ printf 'Create NextJS project named %s in %s?\n
 if yes_or_no; then
     
     su -c "mkdir $FRONTEND_DIR && 
-        cd $FRONTEND_DIR && 
-        yarn create next-app $PROJECT_NAME" node
+            cd $FRONTEND_DIR && 
+            yarn create next-app $PROJECT_NAME  \
+            -e https://github.com/revoltmedia/rm-faust-scaffold"
 
     if [ -d "$FRONTEND_DIR/$PROJECT_NAME" ]; then
         SOURCE_DIR="$FRONTEND_DIR/$PROJECT_NAME"
