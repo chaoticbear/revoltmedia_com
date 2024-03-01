@@ -33,8 +33,8 @@ const Component: FaustTemplate<any> = (props) => {
         menuItems={menuItems}
       />
 
-      <main className="container">
-        <EntryHeader title={title} />
+      <main className="container is-root-container is-layout-flow wp-block-post-content-is-layout-flow wp-block-post-content ">
+        <h1>{title}</h1>
         <WordPressBlocksViewer blocks={blockList} />
       </main>
 
