@@ -46,7 +46,7 @@
     "roots/wp-password-bcrypt": "1.1.0",
     "wpackagist-theme/twentytwentyfour": "^1.0",
     "wp-graphql/wp-graphql": "^1.19",
-    "wpackagist-plugin/faustwp": "^1.1",
+    "wpackagist-plugin/faustwp": "^1.2",
     "wpengine/wp-graphql-content-blocks": "^2.0",
     "wpackagist-plugin/debug-bar": "^1.1"
   },

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb0063cd973333fa7b6314831be78559",
+    "content-hash": "5666e6a47c9478a572ff1c164fa8247a",
     "packages": [
         {
             "name": "appsero/client",
@@ -1399,7 +1399,7 @@
         },
         {
             "name": "wpackagist-plugin/faustwp",
-            "version": "1.1.2",
+            "version": "1.2.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/faustwp/",
@@ -1407,7 +1407,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/faustwp.zip?timestamp=1701885964"
+                "url": "https://downloads.wordpress.org/plugin/faustwp.zip?timestamp=1709138494"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
