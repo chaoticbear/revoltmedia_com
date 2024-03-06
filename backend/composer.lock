@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5666e6a47c9478a572ff1c164fa8247a",
+    "content-hash": "ab520c400fba9de726fb28b7b1439f63",
     "packages": [
         {
             "name": "appsero/client",
@@ -1304,16 +1304,16 @@
         },
         {
             "name": "wp-graphql/wp-graphql",
-            "version": "v1.19.0",
+            "version": "v1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-graphql/wp-graphql.git",
-                "reference": "162424b8b1afeb2bf706dd08beca5783f80c1db3"
+                "reference": "933de8a09f4f5e091ab80e8648e8c385a09bef1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-graphql/wp-graphql/zipball/162424b8b1afeb2bf706dd08beca5783f80c1db3",
-                "reference": "162424b8b1afeb2bf706dd08beca5783f80c1db3",
+                "url": "https://api.github.com/repos/wp-graphql/wp-graphql/zipball/933de8a09f4f5e091ab80e8648e8c385a09bef1a",
+                "reference": "933de8a09f4f5e091ab80e8648e8c385a09bef1a",
                 "shasum": ""
             },
             "require": {
@@ -1332,7 +1332,8 @@
                 "codeception/module-rest": "^1.2",
                 "codeception/module-webdriver": "^1.0",
                 "codeception/util-universalframework": "^1.0",
-                "lucatume/wp-browser": "^3.1.6",
+                "lucatume/wp-browser": "<3.5",
+                "phpcompatibility/php-compatibility": "dev-develop as 9.9.9",
                 "phpcompatibility/phpcompatibility-wp": "^2.1",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan": "~1.10.18",
@@ -1375,9 +1376,9 @@
             "description": "GraphQL API for WordPress",
             "support": {
                 "issues": "https://github.com/wp-graphql/wp-graphql/issues",
-                "source": "https://github.com/wp-graphql/wp-graphql/tree/v1.19.0"
+                "source": "https://github.com/wp-graphql/wp-graphql/tree/v1.22.0"
             },
-            "time": "2023-11-14T22:58:31+00:00"
+            "time": "2024-03-04T21:19:13+00:00"
         },
         {
             "name": "wpackagist-plugin/debug-bar",
