@@ -15,7 +15,7 @@ services:
   frontend:
     user: node
     type: node:18
-    command: cd /app/frontend && yarn dev
+    command: ./scripts/start-dev.sh
     build:
       - cd /app/frontend && yarn
     ssl: true
@@ -36,3 +36,7 @@ tooling:
     service: frontend
     dir: /app/frontend
     user: node
+  composer:
+    service: appserver
+    dir: /app/backend
+    cmd: composer

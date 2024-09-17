@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0eec6fc835eb62faf644c2c26f5d9f68",
+    "content-hash": "ab520c400fba9de726fb28b7b1439f63",
     "packages": [
         {
             "name": "appsero/client",
@@ -258,6 +258,58 @@
                 }
             ],
             "time": "2023-11-12T22:16:48+00:00"
+        },
+        {
+            "name": "imangazaliev/didom",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Imangazaliev/DiDOM.git",
+                "reference": "50fa6595d14f22c0c984efed5c818485cf548136"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Imangazaliev/DiDOM/zipball/50fa6595d14f22c0c984efed5c818485cf548136",
+                "reference": "50fa6595d14f22c0c984efed5c818485cf548136",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-iconv": "*",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DiDom\\": "src/DiDom/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Imangazaliev Muhammad",
+                    "email": "imangazalievm@gmail.com"
+                }
+            ],
+            "description": "Simple and fast HTML parser",
+            "homepage": "https://github.com/Imangazaliev/DiDOM",
+            "keywords": [
+                "didom",
+                "html",
+                "parser",
+                "xml"
+            ],
+            "support": {
+                "issues": "https://github.com/Imangazaliev/DiDOM/issues",
+                "source": "https://github.com/Imangazaliev/DiDOM/tree/2.0.1"
+            },
+            "time": "2023-03-05T03:23:48+00:00"
         },
         {
             "name": "ivome/graphql-relay-php",
@@ -555,7 +607,7 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "6.4.2",
+            "version": "6.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress.git",
@@ -586,7 +638,7 @@
             ],
             "support": {
                 "issues": "https://github.com/roots/wordpress/issues",
-                "source": "https://github.com/roots/wordpress/tree/6.4.2"
+                "source": "https://github.com/roots/wordpress/tree/6.4.3"
             },
             "funding": [
                 {
@@ -669,22 +721,22 @@
         },
         {
             "name": "roots/wordpress-no-content",
-            "version": "6.4.2",
+            "version": "6.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "6.4.2"
+                "reference": "6.4.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/release/wordpress-6.4.2-no-content.zip",
-                "shasum": "77d5fc8e5535fc2c63c1c6ae0c4763aad10ac8e7"
+                "url": "https://downloads.wordpress.org/release/wordpress-6.4.3-no-content.zip",
+                "shasum": "4138c6337bf524159b406d5b27916deebb0f78df"
             },
             "require": {
                 "php": ">= 7.0.0"
             },
             "provide": {
-                "wordpress/core-implementation": "6.4.2"
+                "wordpress/core-implementation": "6.4.3"
             },
             "suggest": {
                 "ext-curl": "Performs remote request operations.",
@@ -735,7 +787,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2023-12-06T16:27:40+00:00"
+            "time": "2024-01-30T19:32:01+00:00"
         },
         {
             "name": "roots/wp-config",
@@ -1252,16 +1304,16 @@
         },
         {
             "name": "wp-graphql/wp-graphql",
-            "version": "v1.19.0",
+            "version": "v1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-graphql/wp-graphql.git",
-                "reference": "162424b8b1afeb2bf706dd08beca5783f80c1db3"
+                "reference": "933de8a09f4f5e091ab80e8648e8c385a09bef1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-graphql/wp-graphql/zipball/162424b8b1afeb2bf706dd08beca5783f80c1db3",
-                "reference": "162424b8b1afeb2bf706dd08beca5783f80c1db3",
+                "url": "https://api.github.com/repos/wp-graphql/wp-graphql/zipball/933de8a09f4f5e091ab80e8648e8c385a09bef1a",
+                "reference": "933de8a09f4f5e091ab80e8648e8c385a09bef1a",
                 "shasum": ""
             },
             "require": {
@@ -1280,7 +1332,8 @@
                 "codeception/module-rest": "^1.2",
                 "codeception/module-webdriver": "^1.0",
                 "codeception/util-universalframework": "^1.0",
-                "lucatume/wp-browser": "^3.1.6",
+                "lucatume/wp-browser": "<3.5",
+                "phpcompatibility/php-compatibility": "dev-develop as 9.9.9",
                 "phpcompatibility/phpcompatibility-wp": "^2.1",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan": "~1.10.18",
@@ -1323,9 +1376,45 @@
             "description": "GraphQL API for WordPress",
             "support": {
                 "issues": "https://github.com/wp-graphql/wp-graphql/issues",
-                "source": "https://github.com/wp-graphql/wp-graphql/tree/v1.19.0"
+                "source": "https://github.com/wp-graphql/wp-graphql/tree/v1.22.0"
             },
-            "time": "2023-11-14T22:58:31+00:00"
+            "time": "2024-03-04T21:19:13+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/debug-bar",
+            "version": "1.1.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/debug-bar/",
+                "reference": "tags/1.1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar.1.1.4.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/debug-bar/"
+        },
+        {
+            "name": "wpackagist-plugin/faustwp",
+            "version": "1.2.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/faustwp/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/faustwp.zip?timestamp=1709138494"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/faustwp/"
         },
         {
             "name": "wpackagist-theme/twentytwentyfour",
@@ -1344,6 +1433,83 @@
             },
             "type": "wordpress-theme",
             "homepage": "https://wordpress.org/themes/twentytwentyfour/"
+        },
+        {
+            "name": "wpengine/wp-graphql-content-blocks",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wpengine/wp-graphql-content-blocks.git",
+                "reference": "c0db2f611f8e9c3a4f7c3a3db9f6796dea0289d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wpengine/wp-graphql-content-blocks/zipball/c0db2f611f8e9c3a4f7c3a3db9f6796dea0289d5",
+                "reference": "c0db2f611f8e9c3a4f7c3a3db9f6796dea0289d5",
+                "shasum": ""
+            },
+            "require": {
+                "imangazaliev/didom": "^2.0",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "axepress/wp-graphql-stubs": "^1.14",
+                "brain/monkey": "^2.6",
+                "php-parallel-lint/php-parallel-lint": "^1.3",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^9.5",
+                "roave/security-advisories": "dev-latest",
+                "squizlabs/php_codesniffer": "^3.7",
+                "szepeviktor/phpstan-wordpress": "^1.3",
+                "wpengine/wpengine-coding-standards": "dev-develop",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "type": "wordpress-plugin",
+            "autoload": {
+                "psr-4": {
+                    "WPGraphQL\\ContentBlocks\\": "includes/"
+                },
+                "classmap": [
+                    "includes/"
+                ]
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "WPGraphQL\\ContentBlocks\\Unit\\": "tests/unit/"
+                }
+            },
+            "scripts": {
+                "install-test-env": [
+                    "bash bin/install-test-env.sh"
+                ],
+                "lint": [
+                    "parallel-lint -e php --no-colors --exclude vendor ."
+                ],
+                "phpcs": [
+                    "phpcs"
+                ],
+                "phpcs:fix": [
+                    "phpcbf"
+                ],
+                "phpstan": [
+                    "phpstan analyze --ansi --memory-limit=1G"
+                ],
+                "suite": [
+                    "@lint",
+                    "@phpcs",
+                    "@test"
+                ],
+                "test": [
+                    "phpunit"
+                ]
+            },
+            "description": "Plugin that extends WPGraphQL to support querying (Gutenberg) Blocks as data.",
+            "support": {
+                "source": "https://github.com/wpengine/wp-graphql-content-blocks/tree/v2.0.0",
+                "issues": "https://github.com/wpengine/wp-graphql-content-blocks/issues"
+            },
+            "time": "2023-10-12T15:03:42+00:00"
         }
     ],
     "packages-dev": [

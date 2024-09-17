@@ -28,6 +28,10 @@
       "type": "composer",
       "url": "https://wpackagist.org",
       "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/wpengine/wp-graphql-content-blocks.git"
     }
   ],
   "require": {
@@ -37,11 +41,14 @@
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "6.4.2",
+    "roots/wordpress": "^6.4",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
     "wpackagist-theme/twentytwentyfour": "^1.0",
-    "wp-graphql/wp-graphql": "^1.19"
+    "wp-graphql/wp-graphql": "^1.22",
+    "wpackagist-plugin/faustwp": "^1.2",
+    "wpengine/wp-graphql-content-blocks": "^2.0",
+    "wpackagist-plugin/debug-bar": "^1.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",
@@ -68,6 +75,9 @@
   "scripts": {
     "test": [
       "phpcs"
+    ],
+    "post-install-cmd": [
+      "cd web/app/plugins/wp-graphql-content-blocks/; composer dump-autoload -o"
     ]
   }
 }
